@@ -21,7 +21,8 @@ services:
           context: .
         volumes:
             - ./:/var/www/html
-
+        ports:
+            - "8000:8000"
         links:
             - mysql
     mysql:
