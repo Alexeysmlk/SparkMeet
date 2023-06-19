@@ -18,10 +18,11 @@ return new class extends Migration
             $table->string('second_name');
             $table->unsignedBigInteger('city_id');
             $table->string('photo_url')->nullable();
+            $table->string('background_url')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('city_id')->references('id')->on('cities');
         });
     }
