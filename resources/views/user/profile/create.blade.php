@@ -40,7 +40,7 @@
                                                 <label class="form-label">First name *</label>
                                                 <input class="form-input" type="text"
                                                        placeholder="{{__('Enter your first name')}}"
-                                                       name="first_name" value="{{old('second_name')}}">
+                                                       name="first_name" value="{{old('last_name')}}">
                                                 @foreach($errors->get('first_name') as $error)
                                                     <span style="color: red">{{$error}}</span><br>
                                                 @endforeach
@@ -51,8 +51,8 @@
                                                 <label class="form-label">Second name *</label>
                                                 <input class="form-input" type="text"
                                                        placeholder="{{__('Enter your second name')}}"
-                                                       name="second_name" value="{{old('second_name')}}">
-                                                @foreach($errors->get('second_name') as $error)
+                                                       name="last_name" value="{{old('last_name')}}">
+                                                @foreach($errors->get('last_name') as $error)
                                                     <span style="color: red">{{$error}}</span><br>
                                                 @endforeach
                                             </div>
@@ -66,9 +66,6 @@
                                                 <option value="{{$city->id}}">{{$city->name}}</option>
                                             @endforeach
                                         </select>
-{{--                                        <input class="form-input" type="text"--}}
-{{--                                               placeholder="{{__('Enter your city')}}"--}}
-{{--                                               name="city_id" value="{{old('city_id')}}">--}}
                                         @foreach($errors->get('city') as $error)
                                             <span style="color: red">{{$error}}</span><br>
                                         @endforeach

@@ -4,10 +4,12 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProfileRequest;
+use App\Http\Requests\UpdateProfileRequest;
 use App\Models\City;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -16,7 +18,10 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        //
+        $profile = Auth::user()->profile;
+        $events = Auth::user()->events;
+        $cities = City::all();
+        return view('user.profile.index', compact(['profile', 'events', 'cities']));
     }
 
     /**
@@ -33,11 +38,10 @@ class ProfileController extends Controller
      */
     public function store(StoreProfileRequest $request)
     {
-        dump($request->all());
         $profile = Profile::query()->create([
             'user_id' => Auth::id(),
             'first_name' => $request->input('first_name'),
-            'second_name' => $request->input('second_name'),
+            'last_name' => $request->input('last_name'),
             'city_id' => $request->input('city_id'),
             'description' => $request->input('description'),
         ]);
@@ -62,9 +66,17 @@ class ProfileController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Profile $profile)
+    public function update(UpdateProfileRequest $request, Profile $profile)
     {
-        //
+        $profile->update([
+            'user_id' => 1,
+            'first_name' => $request->input('first_name'),
+            'last_name' => $request->input('last_name'),
+            'description' => $request->input('description'),
+            'city_id' => $request->input('city_id'),
+        ]);
+
+        return redirect()->back();
     }
 
     /**
@@ -73,5 +85,21 @@ class ProfileController extends Controller
     public function destroy(Profile $profile)
     {
         //
+    }
+
+    public  function upload (Request $request){
+        if ($request->hasFile('background_url')){
+            $pathPhoto = Storage::disk('public')->putFile('images/backgrounds', $request->file('background_url'));
+            Auth::user()->profile->update([
+                'background_url' => $pathPhoto,
+            ]);
+        }
+        if ($request->hasFile('photo_url')){
+            $pathPhoto = Storage::disk('public')->putFile('images/avatars', $request->file('photo_url'));
+            Auth::user()->profile->update([
+                'photo_url' => $pathPhoto,
+            ]);
+        }
+        return redirect()->back();
     }
 }
