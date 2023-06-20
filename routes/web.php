@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\User\EventController;
+use App\Http\Controllers\User\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +18,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::name('user.')->group(function () {
+    Route::resource('events', EventController::class);
+    Route::middleware('check.profile')->group(function () {
+        Route::get('profile/create', [ProfileController::class, 'create'])->name('profile.create');
+        Route::post('profile', [ProfileController::class, 'store'])->name('profile.store');
+    });
+});
+
+
+
+
 
 Auth::routes();
 

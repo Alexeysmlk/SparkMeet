@@ -1722,13 +1722,6 @@ main {
     color: #847577;
 }
 
-.ingo-counter span:first-child:after {
-    content: "\e937";
-    font-family: 'Feather';
-    font-size: 6px;
-    padding: 0 7px 0 10px;
-}
-
 .group-btns {
     flex-direction: row;
     display: flex;
@@ -6514,53 +6507,11 @@ footer {
 }
 
 .dpbg-1 {
-    background-image: url(../images/find-peoples/bg-1.jpg) !important;
+    /*background-image: url(../images/find-peoples/bg-profile-events.jpg) !important;*/
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-}
-
-.dpbg-2 {
-    background-image: url(../images/find-peoples/bg-2.jpg) !important;
-}
-
-.dpbg-3 {
-    background-image: url(../images/find-peoples/bg-3.jpg) !important;
-}
-
-.dpbg-4 {
-    background-image: url(../images/find-peoples/bg-4.jpg) !important;
-}
-
-.dpbg-5 {
-    background-image: url(../images/find-peoples/bg-5.jpg) !important;
-}
-
-.dpbg-6 {
-    background-image: url(../images/find-peoples/bg-6.jpg) !important;
-}
-
-.dpbg-7 {
-    background-image: url(../images/find-peoples/bg-7.jpg) !important;
-}
-
-.dpbg-8 {
-    background-image: url(../images/find-peoples/bg-8.jpg) !important;
-}
-
-.dpbg-9 {
-    background-image: url(../images/find-peoples/bg-9.jpg) !important;
-}
-
-.dpbg-10 {
-    background-image: url(../images/find-peoples/bg-10.jpg) !important;
-}
-
-.dpbg-11 {
-    background-image: url(../images/find-peoples/bg-11.jpg) !important;
-}
-
-.dpbg-12 {
-    background-image: url(../images/find-peoples/bg-12.jpg) !important;
+    background-position: center;
+    background-size: cover;">
 }
 
 /* === About Us Page === */
@@ -8834,12 +8785,6 @@ footer {
     border-top: 1px solid #e6e6e6;
     text-align: left;
     width: 100%;
-}
-
-.credit-form {
-    display: block;
-    width: 100%;
-    padding: 0 20px 20px;
 }
 
 .exp-cvv {
