@@ -4573,7 +4573,6 @@ footer {
     overflow-x: auto;
     overscroll-behavior-y: contain;
     pointer-events: all;
-    height: 255px;
 }
 
 .cancel-btn {
@@ -6511,7 +6510,7 @@ footer {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     background-position: center;
-    background-size: cover;">
+    background-size: cover;
 }
 
 /* === About Us Page === */
@@ -7370,14 +7369,6 @@ footer {
     filter: none;
     transition: all 0.12s ease-in-out 0s;
     opacity: 1;
-}
-
-.hero-img-1 {
-    background-image: url(../images/event-view/my-bg.jpg);
-}
-
-.hero-img-2 {
-    background-image: url(../images/event-view/other-bg.jpg);
 }
 
 .user-left-dt {

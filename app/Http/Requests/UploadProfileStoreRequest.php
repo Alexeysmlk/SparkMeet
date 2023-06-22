@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreEventRequest extends FormRequest
+class UploadProfileStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,12 +22,8 @@ class StoreEventRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string|min:5|max:30',
-            'date' => 'required|date_format:m/d/Y|after_or_equal:tomorrow',
-            'time' => 'required|date_format:H:i',
-            'category' => 'required|exists:categories,id',
-            'description' => 'nullable|string',
-            'photo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048'
+            'photo_url' => 'image|mimes:jpeg,png,jpg|max:2048',
+            'background_url' => 'image|mimes:jpeg,png,jpg|max:2048'
         ];
     }
 }

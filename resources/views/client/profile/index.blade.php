@@ -15,6 +15,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="container">
+
                             <form action="{{route('user.profile.update', ['profile'=>$profile])}}" method="POST"
                                   id="edit-profile-form">
                                 @csrf
@@ -249,7 +250,7 @@
                                                                     </a>
                                                                 </div>
                                                                 <div class="event-body">
-                                                                    <a href="event_detail_view.html"
+                                                                    <a href="{{route('user.events.show', ['event' =>$event])}}"
                                                                        class="event-title">{{__($event->title)}}</a>
                                                                     <div class="dash-counter-block">
                                                                         <p class="dash-event-counter">
