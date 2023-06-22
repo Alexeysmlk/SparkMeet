@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('first_name');
-            $table->string('second_name');
+            $table->string('last_name');
             $table->unsignedBigInteger('city_id');
             $table->string('photo_url')->nullable();
             $table->string('background_url')->nullable();

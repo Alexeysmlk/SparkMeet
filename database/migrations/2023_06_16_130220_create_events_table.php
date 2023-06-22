@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('photo_url')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('category_id');
+            $table->text('description')->nullable();
             $table->unsignedBigInteger('city_id');
             $table->date('date');
             $table->time('time');
