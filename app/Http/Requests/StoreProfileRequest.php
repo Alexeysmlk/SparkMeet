@@ -24,7 +24,7 @@ class StoreProfileRequest extends FormRequest
         return [
             'first_name' => 'required|string|max:30',
             'last_name' => 'required|string|max:30',
-            'city_id' => 'required|exists:cities,id',
+            'city_id' => 'required',
             'description' => 'nullable|string|max:255',
         ];
     }
