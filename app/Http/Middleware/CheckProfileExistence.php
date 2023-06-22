@@ -19,8 +19,8 @@ class CheckProfileExistence
     {
         $user = $request->user();
 
-        if ($user && $user->profile) {
-            return redirect()->route('user.events.index');
+        if ($user && !$user->profile) {
+            return redirect()->route('user.profile.create');
         }
         return $next($request);
     }
