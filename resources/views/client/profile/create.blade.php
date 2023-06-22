@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.start')
 
 @section('content')
     <div class="title-bar">
@@ -7,7 +7,7 @@
                 <div class="col-lg-12">
                     <ol class="title-bar-text">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Credits</li>
+                        <li class="breadcrumb-item active" aria-current="page">Creating an account</li>
                     </ol>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                                                 <option value="{{$city->id}}">{{$city->name}}</option>
                                             @endforeach
                                         </select>
-                                        @foreach($errors->get('city') as $error)
+                                        @foreach($errors->get('city_id') as $error)
                                             <span style="color: red">{{$error}}</span><br>
                                         @endforeach
                                     </div>
