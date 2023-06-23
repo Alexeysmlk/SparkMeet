@@ -40,7 +40,7 @@ Route::name('user.')->middleware(['auth', 'verified'])->group(function () {
         Route::get('user/setting', [UserController::class, 'edit'])->name('profile.edit');
         Route::put('/user/update-email', [UserController::class, 'updateEmail'])->name('user.updateEmail');
         Route::put('/user/update-password', [UserController::class, 'updatePassword'])->name('user.updatePassword');
-        Route::put('/user/delete-account', [UserController::class, 'deleteAccount'])->name('user.deleteAccount');
+        Route::delete('/user/delete-account', [UserController::class, 'deactivateAccount'])->name('user.deleteAccount');
     });
 });
 

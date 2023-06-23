@@ -105,7 +105,7 @@
                                           enctype="multipart/form-data">
                                         @csrf
                                         <input type="file" id="cover-img" name="background_url" style="display: none;"
-                                               accept="image/*">
+                                               accept="image/jpeg,png,jpg">
                                         <label for="cover-img"><i class="feather-image me-2"></i>Change Image</label>
                                     </form>
                                 </div>
@@ -129,7 +129,7 @@
                                               enctype="multipart/form-data">
                                             @csrf
                                             <input type="file" id="avatar-img" name="photo_url" style="display: none;"
-                                                   accept="image/*">
+                                                   accept="image/jpeg,png,jpg">
                                             <label for="avatar-img"><i class="feather-camera"></i></label>
                                         </form>
                                     </div>
@@ -277,10 +277,8 @@
                                                                                 class="ms-auto">{{__($event->category->name)}}</span>
                                                                         </p>
                                                                     </div>
-                                                                    <div class="group-btns">
-                                                                        <button class="interest-btn btn-hover w-100"><i
-                                                                                class="feather-edit me-2"></i>Edit
-                                                                        </button>
+                                                                    <div class="group-btns d-flex justify-content-center align-items-center">
+                                                                        <a class="main-btn btn-hover h_40" href="{{route('user.events.edit', ['event' => $event])}}">Edit</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -337,188 +335,6 @@
                                             <div class="about-step">
                                                 <span>{{__('Your city')}}</span>
                                                 <h5 class="mb-0 mt-2">{{__($profile->city->name)}}</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fde" id="discussion" role="tabpanel"
-                                     aria-labelledby="discussion-tab">
-                                    <div class="main-card mt-4 mb-0">
-                                        <div
-                                            class="events-dash-heading d-flex align-items-center w-100 py-2 pe-2 ps-4 border_bottom">
-                                            <h4>All Discussions</h4>
-                                            <a class="main-btn btn-hover h_40 ms-auto" data-bs-toggle="modal"
-                                               href="#add-discussion-model" role="button">Add Topic</a>
-                                        </div>
-                                        <div class="my-all-discussions">
-                                            <div class="dis-item">
-                                                <div class="row no-gutters">
-                                                    <div class="col-xl-8 col-lg-12 col-md-12">
-                                                        <div class="dis-img-text">
-                                                            <img src="/assets/images/discussion/img-1.jpg" alt="">
-                                                            <a href="single_discussion_view.html"><h4>Lorem ipsum dolor
-                                                                    sit amet, consectetur adipiscing elit.</h4></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-lg-12 col-md-12">
-                                                        <ul class="dis-reviews">
-                                                            <li>
-                                                                <a href="#">5 h</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">3k views</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">5 replies</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="dis-item">
-                                                <div class="row no-gutters">
-                                                    <div class="col-xl-8 col-lg-12 col-md-12">
-                                                        <div class="dis-img-text">
-                                                            <img src="/assets/images/discussion/img-1.jpg" alt="">
-                                                            <a href="single_discussion_view.html"><h4>ellentesque vitae
-                                                                    metus at neque cursus finibus.</h4></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-lg-12 col-md-12">
-                                                        <ul class="dis-reviews">
-                                                            <li>
-                                                                <a href="#">6 h</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">6k views</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">10 replies</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="dis-item">
-                                                <div class="row no-gutters">
-                                                    <div class="col-xl-8 col-lg-12 col-md-12">
-                                                        <div class="dis-img-text">
-                                                            <img src="/assets/images/discussion/img-1.jpg" alt="">
-                                                            <a href="single_discussion_view.html"><h4>Cras vel lorem
-                                                                    gravida, ullamcorper mi sed.</h4></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-lg-12 col-md-12">
-                                                        <ul class="dis-reviews">
-                                                            <li>
-                                                                <a href="#">6 h</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">7k views</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">15 replies</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="dis-item">
-                                                <div class="row no-gutters">
-                                                    <div class="col-xl-8 col-lg-12 col-md-12">
-                                                        <div class="dis-img-text">
-                                                            <img src="/assets/images/discussion/img-1.jpg" alt="">
-                                                            <a href="single_discussion_view.html"><h4>Obortis risus.
-                                                                    Nunc egestas arcu sit amet blandit finibus.</h4></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-lg-12 col-md-12">
-                                                        <ul class="dis-reviews">
-                                                            <li>
-                                                                <a href="#">7 h</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">10k views</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">50 replies</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="dis-item">
-                                                <div class="row no-gutters">
-                                                    <div class="col-xl-8 col-lg-12 col-md-12">
-                                                        <div class="dis-img-text">
-                                                            <img src="/assets/images/discussion/img-1.jpg" alt="">
-                                                            <a href="single_discussion_view.html"><h4>Quisque in purus
-                                                                    ut velit facilisis consequat ac id eros. </h4></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-lg-12 col-md-12">
-                                                        <ul class="dis-reviews">
-                                                            <li>
-                                                                <a href="#">7 h</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">7.5k views</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">48 replies</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="dis-item">
-                                                <div class="row no-gutters">
-                                                    <div class="col-xl-8 col-lg-12 col-md-12">
-                                                        <div class="dis-img-text">
-                                                            <img src="/assets/images/discussion/img-1.jpg" alt="">
-                                                            <a href="single_discussion_view.html"><h4>Pellentesque
-                                                                    semper urna est, non egestas massa vestibulum
-                                                                    a.</h4></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-lg-12 col-md-12">
-                                                        <ul class="dis-reviews">
-                                                            <li>
-                                                                <a href="#">8 h</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">8k views</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">60 replies</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="dis-item">
-                                                <div class="row no-gutters">
-                                                    <div class="col-xl-8 col-lg-12 col-md-12">
-                                                        <div class="dis-img-text">
-                                                            <img src="/assets/images/discussion/img-1.jpg" alt="">
-                                                            <a href="single_discussion_view.html"><h4>Nunc maximus
-                                                                    mauris non tincidunt tincidunt.</h4></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-lg-12 col-md-12">
-                                                        <ul class="dis-reviews">
-                                                            <li>
-                                                                <a href="#">9 h</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">8.2k views</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">52 replies</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
