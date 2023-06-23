@@ -6,7 +6,8 @@
             <div class="col-lg-6">
                 <div class="lg-left">
                     <div class="lg-logo">
-                        <a href="index.html"><img src="{{asset('/assets/images/login-register/logo.svg')}}" alt="Logo"></a>
+                        <a class="order-lg-0 ml-lg-0 ml-3 me-auto d-flex align-items-center" href="{{route('user.events.index')}}"><img
+                                src="{{asset('/assets/images/logo-2.svg')}}" alt=""><span class="text-uppercase fs-5 ms-3" style="color: #ff7555">SparkMeet</span></a>
                     </div>
                     <div class="lr-text">
                         <h2>Login Now</h2>

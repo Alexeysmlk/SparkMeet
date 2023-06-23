@@ -38,8 +38,8 @@
 							<i class="feather-menu"></i>
 						</span>
             </button>
-            <a class="order-lg-0 ml-lg-0 ml-3 me-auto" href="{{route('user.events.index')}}"><img
-                    src="{{asset('/assets/images/logo-2.svg')}}" alt=""></a>
+            <a class="order-lg-0 ml-lg-0 ml-3 me-auto d-flex align-items-center" href="{{route('user.events.index')}}"><img
+                    src="{{asset('/assets/images/logo-2.svg')}}" alt=""><span class="text-uppercase fs-5 ms-3" style="color: #ff7555">SparkMeet</span></a>
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
                  aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
@@ -51,17 +51,7 @@
                     </button>
                 </div>
                 <div class="offcanvas-body">
-                    <div class="offcanvas-search navbar-search position-relative d-block d-lg-none d-xl-block">
-                        <div class="input-group">
-                            <input type="text" class="form-control shadow-none border-0"
-                                   placeholder="Search events by categories..." aria-label="Search">
-                            <div class="input-group-append">
-                                <button class="btn" type="button">
-                                    <i class="feather-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+
                     <a href="#" class="add-event-btn btn-hover d-block d-lg-none">Add New Event</a>
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe_5">
                         <li class="nav-item">
@@ -87,33 +77,6 @@
 										</span>
                                 Discussion
                             </a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link custom-d-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                               aria-expanded="false">
-										<span class="nav-icon d-lg-none me-3">
-											<i class="feather-list"></i>
-										</span>
-                                Pages<i class="fas fa-caret-down ms-2 d-none d-lg-inline-block"></i>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="link-item" href="login.html">Login</a>
-                                <a class="link-item" href="register.html">Register</a>
-                                <a class="link-item" href="error_404.html">Error 404</a>
-                                <a class="link-item" href="categories.html">Categories</a>
-                                <a class="link-item" href="event_detail_view.html">Event Detail View</a>
-                                <a class="link-item" href="user_profile.html">User Profile</a>
-                                <a class="link-item" href="find_friends.html">Find Friends</a>
-                                <a class="link-item" href="messages.html">Messages</a>
-                                <a class="link-item" href="friend_requests.html">Friend Requests</a>
-                                <a class="link-item" href="notifications.html">Notifications</a>
-                                <a class="link-item" href="credit.html">Credit</a>
-                                <a class="link-item" href="checkout.html">Checkout</a>
-                                <a class="link-item" href="confirmed_order.html">Confirmed Order</a>
-                                <a class="link-item" href="about.html">About</a>
-                                <a class="link-item" href="blog_detail_view.html">Blog Detail View</a>
-                                <a class="link-item" href="contact_us.html">Contact</a>
-                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="our_blog.html">
