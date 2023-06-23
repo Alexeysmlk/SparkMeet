@@ -138,12 +138,12 @@
                                 <div class="categories-items">
                                     <div class="categories-container">
                                         @foreach($categories as $category)
-                                            <a class="category-item" href="explore.html">
+                                            <span class="category-item">
                                                 @if($category->icon_path)
-                                                    <img src="{{ asset("storage/$category->icon_path") }}" alt="Icon">
+                                                    <img src="{{ asset("storage/images/$category->icon_path") }}" alt="Icon">
                                                 @endif
                                                 {{ $category->name }}
-                                            </a>
+                                            </span>
                                         @endforeach
                                     </div>
                                 </div>
