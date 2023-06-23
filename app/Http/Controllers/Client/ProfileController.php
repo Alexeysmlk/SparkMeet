@@ -21,10 +21,11 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $profile = Auth::user()->profile;
-        $events = Auth::user()->events;
+        $user = Auth::user();
+        $profile = $user->profile;
+        $events = $user->events;
         $cities = City::all();
-        return view('client.profile.index', compact(['profile', 'events', 'cities']));
+        return view('client.profile.index', compact(['profile', 'events', 'cities', 'user']));
     }
 
     /**

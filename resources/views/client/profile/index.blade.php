@@ -196,17 +196,15 @@
                                             <div class="col-lg-6 col-xl-6 col-md-6 col-12">
                                                 <div class="dash-step">
                                                     <i class="feather-calendar"></i>
-                                                    <h6 class="dash-step-title">Count of your events</h6>
+                                                    <h6 class="dash-step-title">The count of your events</h6>
                                                     <span class="count-1">{{count($events)}}</span>
-                                                    <span class="count-2">+1 last 30 days</span>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-xl-6 col-md-6 col-12">
                                                 <div class="dash-step">
                                                     <i class="feather-star"></i>
-                                                    <h6 class="dash-step-title">Response</h6>
-                                                    <span class="count-1">18</span>
-                                                    <span class="count-2">+15 last 30 days</span>
+                                                    <h6 class="dash-step-title">The count of events you are interested in</h6>
+                                                    <span class="count-1">{{ $user->likedEvents->count() }}</span>
                                                 </div>
                                             </div>
                                         </div>
