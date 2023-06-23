@@ -144,32 +144,9 @@
                                     <p>{{__($profile->description)}}</p>
                                 </div>
                                 <div class="user-btns">
-                                    <a href="setting.html"
+                                    <a href="{{route('user.profile.edit')}}"
                                        class="co-main-btn co-btn-width min-width d-inline-block h_40"><i
                                             class="feather-settings me-2"></i>Profile Setting</a>
-                                </div>
-                                <div class="profile-social-link">
-                                    <h6>Find me on</h6>
-                                    <div class="social-links">
-                                        <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top"
-                                           title="" data-bs-original-title="Facebook" aria-label="Facebook"><i
-                                                class="fab fa-facebook-square"></i></a>
-                                        <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top"
-                                           title="" data-bs-original-title="Instagram" aria-label="Instagram"><i
-                                                class="fab fa-instagram"></i></a>
-                                        <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top"
-                                           title="" data-bs-original-title="Twitter" aria-label="Twitter"><i
-                                                class="fab fa-twitter"></i></a>
-                                        <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top"
-                                           title="" data-bs-original-title="LinkedIn" aria-label="LinkedIn"><i
-                                                class="fab fa-linkedin-in"></i></a>
-                                        <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top"
-                                           title="" data-bs-original-title="Youtube" aria-label="Youtube"><i
-                                                class="fab fa-youtube"></i></a>
-                                        <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top"
-                                           title="" data-bs-original-title="Website" aria-label="Website"><i
-                                                class="fa-solid fa-globe"></i></a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -303,32 +280,6 @@
                                             <div class="about-step">
                                                 <span>A little information about you</span>
                                                 <h5 class="mb-0 mt-2">{{__($profile->description)}}</h5>
-                                            </div>
-                                            <div class="about-step">
-                                                <h5>Find me on</h5>
-                                                <div class="social-links">
-                                                    <a href="#" class="social-link" data-bs-toggle="tooltip"
-                                                       data-bs-placement="top" title=""
-                                                       data-bs-original-title="Facebook" aria-label="Facebook"><i
-                                                            class="fab fa-facebook-square"></i></a>
-                                                    <a href="#" class="social-link" data-bs-toggle="tooltip"
-                                                       data-bs-placement="top" title=""
-                                                       data-bs-original-title="Instagram" aria-label="Instagram"><i
-                                                            class="fab fa-instagram"></i></a>
-                                                    <a href="#" class="social-link" data-bs-toggle="tooltip"
-                                                       data-bs-placement="top" title="" data-bs-original-title="Twitter"
-                                                       aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                                                    <a href="#" class="social-link" data-bs-toggle="tooltip"
-                                                       data-bs-placement="top" title=""
-                                                       data-bs-original-title="LinkedIn" aria-label="LinkedIn"><i
-                                                            class="fab fa-linkedin-in"></i></a>
-                                                    <a href="#" class="social-link" data-bs-toggle="tooltip"
-                                                       data-bs-placement="top" title="" data-bs-original-title="Youtube"
-                                                       aria-label="Youtube"><i class="fab fa-youtube"></i></a>
-                                                    <a href="#" class="social-link" data-bs-toggle="tooltip"
-                                                       data-bs-placement="top" title="" data-bs-original-title="Website"
-                                                       aria-label="Website"><i class="fa-solid fa-globe"></i></a>
-                                                </div>
                                             </div>
                                             <div class="about-step">
                                                 <span>{{__('Your city')}}</span>

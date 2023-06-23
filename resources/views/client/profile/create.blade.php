@@ -1,7 +1,7 @@
 @extends('layouts.start')
 
 @section('content')
-    <div class="title-bar">
+    <div class="title-bar mt-0">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
