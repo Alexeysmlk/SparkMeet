@@ -49,7 +49,7 @@
                                          aria-labelledby="in-person-tab">
                                         <div class="main-form">
                                             <div class="form-group mt-4">
-                                                <label class="form-label">Event Name*</label>
+                                                <label class="form-label">Event Name *</label>
                                                 <input class="form-input" type="text" placeholder="Enter Event name"
                                                        name="title" value="{{old('title')}}">
                                                 @foreach($errors->get('title') as $error)
@@ -59,7 +59,7 @@
                                             <div class="row">
                                                 <div class="col-lg-6 col-md-12">
                                                     <div class="form-group mt-3">
-                                                        <label class="form-label">Start Date*</label>
+                                                        <label class="form-label">Start Date *</label>
                                                         <input class="search-form-input datepicker-here"
                                                                data-language='en' type="text" placeholder="Select Date"
                                                                name="date" value="{{old('date')}}">
@@ -70,7 +70,7 @@
                                                 </div>
                                                 <div class="col-lg-6 col-md-12">
                                                     <div class="form-group mt-3 clock-icon">
-                                                        <label class="form-label">Start Time*</label>
+                                                        <label class="form-label">Start Time *</label>
                                                         <select class="selectpicker" data-size="5"
                                                                 data-live-search="true" name="time">
                                                             @php
@@ -94,7 +94,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group mt-4">
-                                                <label class="form-label">Category*</label>
+                                                <label class="form-label">Category *</label>
                                                 <select class="selectpicker" data-width="100%" data-size="5"
                                                         data-live-search="true" name="category">
                                                     @foreach($categories as $category)
@@ -109,7 +109,7 @@
                                                 @endforeach
                                             </div>
                                             <div class="form-group mt-4">
-                                                <label class="form-label">Location*</label>
+                                                <label class="form-label">Location *</label>
                                                 <div class="position-relative">
                                                     <select class="selectpicker" data-width="100%" data-size="5"
                                                             data-live-search="true" name="city">
@@ -126,13 +126,25 @@
                                                 </div>
                                             </div>
                                             <div class="form-group mt-4">
-                                                <label class="form-label">Description*</label>
+                                                <label class="form-label">Description</label>
                                                 <textarea class="form-textarea" placeholder="Description"
                                                           name="description">{{old('description')}}</textarea>
                                                 @foreach($errors->get('description') as $error)
                                                     <span style="color: red">{{$error}}</span><br>
                                                 @endforeach
                                                 <span class="small-des">Provide more information about your event so that guests know what to expect.</span>
+                                            </div>
+                                            <div class="form-group mt-4">
+                                                <label class="form-label">Tags for event</label>
+                                                <select name="tags[]" class="selectpicker" data-size="5"
+                                                        data-live-search="true" name="time" multiple>
+                                                    @foreach ($tags as $tag)
+                                                        <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                                @foreach($errors->get('tags') as $error)
+                                                    <span style="color: red">{{$error}}</span><br>
+                                                @endforeach
                                             </div>
                                             <button class="main-btn btn-hover h-40 w-100 mt-37 mb-3">Create Event
                                             </button>

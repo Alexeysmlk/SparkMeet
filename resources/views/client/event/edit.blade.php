@@ -99,8 +99,9 @@
                                                 <select class="selectpicker" data-width="100%" data-size="5"
                                                         data-live-search="true" name="category">
                                                     @foreach($categories as $category)
-                                                        <option value="{{$category->id}}" @selected($event->category_id === $category->id)>
-                                                        {{$category->name}}
+                                                        <option value="{{$category->id}}" @selected($event->category_id
+                                                            === $category->id)>
+                                                            {{$category->name}}
                                                         </option>
                                                     @endforeach
                                                 </select>
@@ -114,8 +115,9 @@
                                                     <select class="selectpicker" data-width="100%" data-size="5"
                                                             data-live-search="true" name="city">
                                                         @foreach($cities as $city)
-                                                            <option value="{{$city->id}}" @selected($event->city_id === $city->id)>
-                                                            {{$city->name}}
+                                                            <option value="{{$city->id}}" @selected($event->city_id ===
+                                                                $city->id)>
+                                                                {{$city->name}}
                                                             </option>
                                                         @endforeach
                                                     </select>
@@ -132,6 +134,18 @@
                                                     <span style="color: red">{{$error}}</span><br>
                                                 @endforeach
                                                 <span class="small-des">Provide more information about your event so that guests know what to expect.</span>
+                                            </div>
+                                            <div class="form-group mt-4">
+                                                <label class="form-label">Tags for event</label>
+                                                <select name="tags[]" class="selectpicker" data-size="5"
+                                                        data-live-search="true" name="time" multiple>
+                                                    @foreach ($tags as $tag)
+                                                        <option value="{{ $tag->id }}" {{ $event->tags->contains($tag) ? 'selected' : '' }}>{{ $tag->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                                @foreach($errors->get('tags') as $error)
+                                                    <span style="color: red">{{$error}}</span><br>
+                                                @endforeach
                                             </div>
                                             <button class="main-btn btn-hover h-40 w-100 mt-37 mb-3">Save
                                             </button>
