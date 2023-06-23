@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreEventRequest;
+use App\Http\Requests\UpdateEventRequest;
 use App\Models\Category;
 use App\Models\City;
 use App\Models\Event;
 use App\Models\Profile;
+use App\Models\Tag;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Carbon\Carbon;
@@ -38,7 +40,8 @@ class EventController extends Controller
     {
         $categories = Category::all();
         $cities = City::all();
-        return view('client.event.create', compact(['categories', 'cities']));
+        $tags = Tag::all();
+        return view('client.event.create', compact(['categories', 'cities', 'tags']));
     }
 
     /**
@@ -66,6 +69,9 @@ class EventController extends Controller
             'date' => $formattedDate,
             'time' => $formattedTime,
         ]);
+
+        $event->tags()->sync($request->tags);
+
         return redirect(RouteServiceProvider::HOME);
     }
 
@@ -87,13 +93,14 @@ class EventController extends Controller
     {
         $categories = Category::all();
         $cities = City::all();
-        return view('client.event.edit', compact(['event', 'categories', 'cities']));
+        $tags = Tag::all();
+        return view('client.event.edit', compact(['event', 'categories', 'cities', 'tags']));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Event $event)
+    public function update(UpdateEventRequest $request, Event $event)
     {
         if ($request->hasFile('photo')) {
             $photo = $request->file('photo');
@@ -114,18 +121,25 @@ class EventController extends Controller
             'date' => $formattedDate,
             'time' => $formattedTime,
         ]);
+
+        if ($request->has('tags')) {
+            $event->tags()->sync($request->tags);
+        }
+
         return redirect()->route('user.profile.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Event $event)
+    public
+    function destroy(Event $event)
     {
         //
     }
 
-    public function like(Request $request, Event $event)
+    public
+    function like(Request $request, Event $event)
     {
         $user = Auth::user();
 

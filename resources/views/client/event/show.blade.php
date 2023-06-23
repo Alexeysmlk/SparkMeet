@@ -122,9 +122,11 @@
                             </div>
                             <div class="tagtlist">
                                 <ul class="taglst17">
-                                    <li>
-                                        <a href="#" class="tagbite">Party</a>
-                                    </li>
+                                    @foreach ($event->tags as $tag)
+                                        <li class="tagbite">
+                                            {{ $tag->name }}
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
