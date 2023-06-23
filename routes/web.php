@@ -41,9 +41,9 @@ Route::name('user.')->middleware(['auth', 'verified'])->group(function () {
         Route::put('/user/update-email', [UserController::class, 'updateEmail'])->name('user.updateEmail');
         Route::put('/user/update-password', [UserController::class, 'updatePassword'])->name('user.updatePassword');
         Route::delete('/user/delete-account', [UserController::class, 'deactivateAccount'])->name('user.deleteAccount');
+        Route::post('/events/{event}/like', [EventController::class, 'like'])->name('events.like');
     });
 });
-
 
 Auth::routes();
 
