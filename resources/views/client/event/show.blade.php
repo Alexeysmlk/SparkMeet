@@ -62,12 +62,15 @@
                                         class="evntcunt">{{"Publish by " . $profile->first_name." ".$profile->last_name}}</span>
                                 </div>
                                 <div class="ms-auto mt-4 mt-md-0 mt-lg-0 mt-xl-0">
-                                    @if($user->id !== $event->user_id)
-                                        <ul class="egroup-btns">
-                                            <li><a class="main--btn view-hover" href="#"><i
-                                                        class="feather-star me-2"></i>Interested</a>
-                                            </li>
-                                        </ul>
+                                    @if($currentUser->id !== $event->user_id)
+                                        <form method="POST"
+                                              action="{{route('user.events.like', $event)}}">
+                                            @csrf
+                                            <button class="interest-btn btn-hover px-4">
+                                                <i
+                                                    class="feather-star me-2"></i>{{ \Illuminate\Support\Facades\Auth::user()->likedEvents->contains($event) ? 'Not interested' : 'Interested' }}
+                                            </button>
+                                        </form>
                                     @endif
                                 </div>
                             </div>
@@ -84,7 +87,7 @@
                                         <i class="feather-users"></i>
                                     </div>
                                     <div class="ttlpple">
-                                        <span>5 people responded</span>
+                                        <span>{{ $event->likedByUsers->count() }} people are interested</span>
                                     </div>
                                 </div>
                             </div>
@@ -104,7 +107,8 @@
                                         <i class="feather-clock"></i>
                                     </div>
                                     <div class="ttlpple">
-                                        <span class="text-uppercase">{{ \Carbon\Carbon::parse($event->date . ' ' . $event->time)->format('D, d F Y \a\t H:i') }}</span>
+                                        <span
+                                            class="text-uppercase">{{ \Carbon\Carbon::parse($event->date . ' ' . $event->time)->format('D, d F Y \a\t H:i') }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -160,16 +164,35 @@
                         <div class="p-20 pt-0">
                             <div class="user-info__sections">
                                 <div class="invite_info__sections scroll1452 p-0">
-                                    <div class="user-follow-card mt-4">
-                                        <div class="follow-card-left">
-                                            <div class="follow-avatar">
-                                                <img src="images/find-peoples/user-2.jpg" alt="">
+                                    @if(count($event->likedByUsers) === 0)
+                                        <div class="no-events">
+                                            <div class="no-event-icon">
+                                                <img src="{{asset('/assets/images/work-1.svg')}}" alt="">
                                             </div>
-                                            <div class="follow-name">
-                                                <a href="user_profile.html">Jassica William</a>
-                                            </div>
+                                            <span>No one is interested</span>
                                         </div>
-                                    </div>
+                                    @else
+                                        @foreach ($event->likedByUsers as $user)
+                                            <div class="user-follow-card mt-4">
+                                                <div class="follow-card-left">
+                                                    <div class="follow-avatar">
+                                                        @if($user->profile->photo_url)
+                                                            <img
+                                                                src="{{ asset('/storage/' . $user->profile->photo_url) }}"
+                                                                alt="Photo of profile">
+                                                        @else
+                                                            <img
+                                                                src="{{ asset('/assets/images/find-peoples/default-avatar-profile.jpg') }}"
+                                                                alt="Photo of profile">
+                                                        @endif
+                                                    </div>
+                                                    <div class="follow-name">
+                                                        <a href="{{route('user.profile.show', ['profile'=>$user->profile])}}">{{__($user->profile->first_name." ".$user->profile->last_name)}}</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    @endif
                                 </div>
                             </div>
                         </div>

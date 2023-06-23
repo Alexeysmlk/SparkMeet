@@ -77,9 +77,19 @@
                                                                         <span>25 Interested</span>
                                                                     </p>
                                                                     <div class="group-btns">
-                                                                        <button class="interest-btn btn-hover"><i
-                                                                                class="feather-star me-2"></i>Interested
-                                                                        </button>
+                                                                        @if(\Illuminate\Support\Facades\Auth::id() !== $event->user_id)
+                                                                            <form  method="POST" class="interest-btn btn-hove d-flex justify-content-center align-items-center"
+                                                                                action="{{route('user.events.like', $event)}}">
+                                                                                @csrf
+                                                                                <button class="interest-btn btn-hover">
+                                                                                    <i
+                                                                                        class="feather-star me-2"></i>{{ \Illuminate\Support\Facades\Auth::user()->likedEvents->contains($event) ? 'Not interested' : 'Interested' }}
+                                                                                </button>
+                                                                            </form>
+                                                                        @else
+                                                                            <span
+                                                                                class="interest-btn d-flex justify-content-center align-items-center">You're owner</span>
+                                                                        @endif
                                                                     </div>
                                                                 </div>
                                                             </div>

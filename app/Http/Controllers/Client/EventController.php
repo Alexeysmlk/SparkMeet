@@ -76,7 +76,8 @@ class EventController extends Controller
     {
         $user = $event->user;
         $profile = $user->profile;
-        return view('client.event.show', compact(['event', 'user', 'profile']));
+        $currentUser = Auth::user();
+        return view('client.event.show', compact(['event', 'user', 'profile', 'currentUser']));
     }
 
     /**
@@ -122,5 +123,18 @@ class EventController extends Controller
     public function destroy(Event $event)
     {
         //
+    }
+
+    public function like(Request $request, Event $event)
+    {
+        $user = Auth::user();
+
+        if ($user->likedEvents->contains($event)) {
+            $user->likedEvents()->detach($event);
+        } else {
+            $user->likedEvents()->attach($event);
+        }
+
+        return back();
     }
 }
