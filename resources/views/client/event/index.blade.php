@@ -7,27 +7,6 @@
                 <div class="row">
                     <div class="col col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-md-12 col-sm-12 col-12">
                         <div class="center-section">
-                            <div class="main-search-bar">
-                                <h2>Events happening in your city</h2>
-                                <form>
-                                    <div class="main-search-inputs main-form">
-                                        <div class="row g-3">
-                                            <div class="col-lg-5 col-md-12 col-sm-12">
-                                                <input class="search-form-input" type="text"
-                                                       placeholder="Search events">
-                                            </div>
-                                            <div class="col-lg-5 col-md-12 col-sm-12">
-                                                <input class="search-form-input datepicker-here" data-language='en'
-                                                       type="text" placeholder="Select Date">
-                                            </div>
-                                            <div class="col-lg-2 col-md-12 col-sm-12">
-                                                <button class="search-btn" type="submit"><i
-                                                        class="feather-search"></i><span>Search</span></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
                             <div class="main-tabs">
                                 <div class="tab-content">
                                     <div class="tab-pane fade show active" id="tab-top">
@@ -153,66 +132,28 @@
                     <div class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-12">
                         <div class="right-side-items mt-0 mt-md-5 mt-lg-5 mt-xl-0">
                             <div class="post-event">
-                                <h6>Want to Post Your Event</h6>
-                                <p>Post your event on Goeveni for free. Just make an account and add it through the
-                                    simple form. As simple as that.</p>
+                                <h6>Create your own event</h6>
+                                <p>It's easy and only takes a minute.  Click the button below.</p>
                                 <a href="{{route('user.events.create')}}" class="add-nw-event">Post It Now</a>
                             </div>
                             <div class="w-weather">
                                 <div class="weather-top">
                                     <div class="weather-left">
-                                        <div class="weather-city">Ludhiana</div>
-                                        <div class="week-text">Monday</div>
-                                        <div class="week-text">14 Oct 2019</div>
-                                        <div class="week-text" style="font-size: 18px;"><i class="fas fa-tint"></i> 30%
-                                        </div>
+                                        <div class="weather-city">{{ $profile->city->name }}</div>
+                                        <div class="week-text">{{ now()->format('l') }}</div>
+                                        <div class="week-text">{{ now()->format('d M Y') }}</div>
+                                        <div class="week-text" style="font-size: 18px;"><i class="fas fa-tint"></i> {{ $weather['current']['humidity'] }}%</div>
                                         <ul>
                                             <li>
-                                                <div class="up-down"><i class="fas fa-long-arrow-alt-up"></i> 18°</div>
-                                            </li>
-                                            <li>
-                                                <div class="up-down"><i class="fas fa-long-arrow-alt-down"></i> 25°
-                                                </div>
+                                                <div class="up-down"><i class="fas fa-long-arrow-alt-up"></i> {{ $weather['current']['temp_c'] }}°</div>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="weather-right">
-                                        <i class="feather-sun"></i>
-                                        <span>22°</span>
+                                        <i class="{{ $weatherIcons[$weather['current']['condition']['code']] }}"></i>
+                                        <span>{{ $weather['current']['temp_c'] }}°</span>
                                     </div>
                                 </div>
-                                <ul class="weekly-weather">
-                                    <li>
-                                        <div class="degree-text">32°</div>
-                                        <div class="weather-icon"><i class="fas fa-sun"></i></div>
-                                        <div class="day-text">Tue</div>
-                                    </li>
-                                    <li>
-                                        <div class="degree-text">19°</div>
-                                        <div class="weather-icon"><i class="fa-solid fa-cloud-sun-rain"></i></div>
-                                        <div class="day-text">Wed</div>
-                                    </li>
-                                    <li>
-                                        <div class="degree-text">32°</div>
-                                        <div class="weather-icon"><i class="fas fa-sun"></i></div>
-                                        <div class="day-text">Thu</div>
-                                    </li>
-                                    <li>
-                                        <div class="degree-text">27°</div>
-                                        <div class="weather-icon"><i class="fas fa-wind"></i></div>
-                                        <div class="day-text">Fri</div>
-                                    </li>
-                                    <li>
-                                        <div class="degree-text">22°</div>
-                                        <div class="weather-icon"><i class="fas fa-cloud-showers-heavy"></i></div>
-                                        <div class="day-text">Sat</div>
-                                    </li>
-                                    <li>
-                                        <div class="degree-text">12°</div>
-                                        <div class="weather-icon"><i class="fas fa-snowflake"></i></div>
-                                        <div class="day-text">Sun</div>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                     </div>
