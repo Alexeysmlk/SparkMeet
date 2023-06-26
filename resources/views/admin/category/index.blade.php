@@ -57,8 +57,8 @@
                                         </td>
                                         <td>
                                             <div class="row d-flex justify-content-around">
-                                                <a href="{{ route('admin.categories.show', ['category' => $category]) }}"
-                                                   class="btn btn-inverse-info btn-fw">Info</a>
+{{--                                                <a href="{{ route('admin.categories.show', ['category' => $category]) }}"--}}
+{{--                                                   class="btn btn-inverse-info btn-fw">Info</a>--}}
                                                 <a href="{{ route('admin.categories.edit', ['category' => $category]) }}"
                                                    class="btn btn-inverse-primary btn-fw">Edit
                                                 </a>

@@ -6,12 +6,10 @@
             <div class="col-lg-6">
                 <div class="lg-left">
                     <div class="lg-logo">
-                        <a href="index.html"><img src="{{asset('images/login-register/logo.svg')}}" alt=""></a>
-                    </div>
+                        <a class="order-lg-0 ml-lg-0 ml-3 me-auto d-flex align-items-center" href="{{route('user.events.index')}}"><img
+                                src="{{asset('/assets/images/logo-2.svg')}}" alt=""><span class="text-uppercase fs-5 ms-3" style="color: #ff7555">SparkMeet</span></a>                    </div>
                     <div class="lr-text">
                         <h2>Register Now</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla interdum blandit felis a
-                            hendrerit.</p>
                     </div>
                 </div>
             </div>
@@ -42,11 +40,6 @@
                             <div class="form-group">
                                 <input class="form-input h_50" type="password"
                                        placeholder="Confirm password" name="password_confirmation">
-                            </div>
-                            <div class="rgstr-dt-txt">
-                                By clicking Sign Up, you agree to our <a href="#">Terms</a>, <a href="#">Data Policy</a>
-                                and <a href="#">Cookie Policy</a>. You may receive Email notifications from us and can
-                                opt out at any time.
                             </div>
                             <button class="login-btn" type="submit">Register Now</button>
                             <div class="login-link">If you have an account? <a href="{{route('login')}}">Login Now</a>

@@ -53,7 +53,7 @@
                                                                     <span
                                                                         class="event-type">{{__($event->city->name)}}</span>
                                                                     <p class="ingo-counter">
-                                                                        <span>25 Interested</span>
+                                                                        <span>{{ $event->likedByUsers->count() }} Interested</span>
                                                                     </p>
                                                                     <div class="group-btns">
                                                                         @if(\Illuminate\Support\Facades\Auth::id() !== $event->user_id)
@@ -93,7 +93,7 @@
                                             @if($profile->photo_url)
                                                 <img
                                                     src="{{ asset('/storage/' . $profile->photo_url) }}"
-                                                    alt="Photo of event">
+                                                    alt="Photo of event" style="object-fit: cover; height: 100%">
                                             @else
                                                 <img
                                                     src="{{ asset('/assets/images/find-peoples/default-avatar-profile.jpg') }}"

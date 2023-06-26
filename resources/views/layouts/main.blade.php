@@ -53,40 +53,40 @@
                 <div class="offcanvas-body">
 
                     <a href="#" class="add-event-btn btn-hover d-block d-lg-none">Add New Event</a>
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe_5">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">
-										<span class="nav-icon d-lg-none me-3">
-											<i class="feather-home"></i>
-										</span>
-                                Home
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="explore.html">
-										<span class="nav-icon  d-lg-none me-3">
-											<i class="feather-target"></i>
-										</span>
-                                Explore
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="discussions.html">
-										<span class="nav-icon d-lg-none me-3">
-											<i class="feather-message-circle"></i>
-										</span>
-                                Discussion
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="our_blog.html">
-										<span class="nav-icon d-lg-none me-3">
-											<i class="feather-rss"></i>
-										</span>
-                                Blog
-                            </a>
-                        </li>
-                    </ul>
+{{--                    <ul class="navbar-nav justify-content-end flex-grow-1 pe_5">--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link active" aria-current="page" href="index.html">--}}
+{{--										<span class="nav-icon d-lg-none me-3">--}}
+{{--											<i class="feather-home"></i>--}}
+{{--										</span>--}}
+{{--                                Home--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link" href="explore.html">--}}
+{{--										<span class="nav-icon  d-lg-none me-3">--}}
+{{--											<i class="feather-target"></i>--}}
+{{--										</span>--}}
+{{--                                Explore--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link" href="discussions.html">--}}
+{{--										<span class="nav-icon d-lg-none me-3">--}}
+{{--											<i class="feather-message-circle"></i>--}}
+{{--										</span>--}}
+{{--                                Discussion--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link" href="our_blog.html">--}}
+{{--										<span class="nav-icon d-lg-none me-3">--}}
+{{--											<i class="feather-rss"></i>--}}
+{{--										</span>--}}
+{{--                                Blog--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
                 </div>
             </div>
             <div class="account dropdown">
@@ -108,7 +108,7 @@
                 <div class="dropdown-menu dropdown-account dropdown-menu-end"
                      aria-labelledby="dropdownMenuClickableInside">
                     <a class="link-item" href="{{route('user.profile.index')}}"><i class="feather-user me-3"></i>Profile</a>
-                    <a class="link-item" href="saved.html"><i class="feather-heart me-3"></i>Save items</a>
+{{--                    <a class="link-item" href="saved.html"><i class="feather-heart me-3"></i>Save items</a>--}}
                     <a class="link-item" href="{{route('user.profile.edit')}}"><i class="feather-settings me-3"></i>Setting</a>
                     <a class="link-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i
@@ -132,10 +132,8 @@
             <div class="col-lg-6 col-md-12">
                 <div class="footer-left">
                     <ul>
-                        <li><a href="privacy_policy.html">Privacy</a></li>
-                        <li><a href="term_conditions.html">Term and Conditions</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact_us.html">Contact Us</a></li>
+                        <li><a href="{{route('privacy')}}">Privacy</a></li>
+                        <li><a href="{{route('terms-conditions')}}">Term and Conditions</a></li>
                     </ul>
                 </div>
             </div>
@@ -144,9 +142,7 @@
                     <ul class="copyright-text">
                         <li><a href="index.html"><img src="{{asset('/assets/images/logo-2.svg')}}" alt=""></a></li>
                         <li>
-                            <div class="ftr-1"><i class="far fa-copyright"></i> 2022 Goeveni by <a
-                                    href="https://themeforest.net/user/gambolthemes">Gambolthemes</a>. All Rights
-                                Reserved.
+                            <div class="ftr-1"><i class="far fa-copyright"></i> 2023 Samoilik Aleksey
                             </div>
                         </li>
                     </ul>

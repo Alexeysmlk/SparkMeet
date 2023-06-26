@@ -243,7 +243,7 @@
                                                                         <p class="dash-event-counter">
                                                                     <span class="h-color"><i
                                                                             class="feather-star me-2"></i>Interested</span>
-                                                                            <span class="ms-auto">122</span>
+                                                                            <span class="ms-auto">{{ $event->likedByUsers->count() }}</span>
                                                                         </p>
                                                                         <p class="dash-event-counter">
                                                                     <span class="h-color"><i

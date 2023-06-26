@@ -16,7 +16,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Form for editing</h4>
-                        <form action="{{route('user.events.update', ['event' => $event])}}"
+                        <form action="{{route('admin.events.update', ['event' => $event])}}"
                               method="post" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
@@ -25,7 +25,7 @@
                                     <div class="panel">
                                         <div class="button_outer">
                                             <div class="btn_upload">
-                                                <input type="file" id="upload_file" name="photo">
+                                                <input type="file" id="upload_file" name="photo" accept="image/jpeg,png,jpg">
                                                 Upload Image
                                             </div>
                                             <div class="processing_bar"></div>

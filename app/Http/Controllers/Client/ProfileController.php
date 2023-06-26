@@ -60,7 +60,7 @@ class ProfileController extends Controller
     {
         $user = $profile->user;
         $events = Event::query()->where('user_id', $user->id)->with('city')->get();
-        return view('client.profile.show', compact(['profile', 'events']));
+        return view('client.profile.show', compact(['profile', 'events', 'user']));
     }
 
     /**

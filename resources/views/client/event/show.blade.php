@@ -153,7 +153,7 @@
                                     </div>
                                     <div class="follow-name">
                                         <a href="{{route('user.profile.show', ['profile'=>$profile])}}">{{__($profile->first_name." ".$profile->last_name)}}</a>
-                                        <span>Event Orgnizar</span>
+                                        <span>Event organizer</span>
                                     </div>
                                 </div>
                             </div>

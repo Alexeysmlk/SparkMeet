@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             CitiesTableSeeder::class,
             CategoriesTableSeeder::class,
             TagsTableSeeder::class,
+            RolesTableSeeder::class
         ]);
     }
 }

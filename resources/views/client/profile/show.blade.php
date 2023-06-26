@@ -61,7 +61,7 @@
                                                 <span
                                                     class="event-type">{{__($event->city->name)}}</span>
                                                 <p class="ingo-counter">
-                                                    <span>25 Interested</span>
+                                                    <span>{{$event->likedByUsers->count()}} Interested</span>
                                                 </p>
                                                 <div class="group-btns">
                                                     <a class="interest-btn btn-hover d-flex justify-content-center align-items-center" href="{{route('user.events.show', ['event' =>$event])}}"><i class="feather-eye me-2"></i>View</a>
@@ -70,14 +70,6 @@
                                         </div>
                                     </div>
                                 @endforeach
-                                <div class="col-md-12">
-                                    <div class="loading-btn">
-                                        <button class="process-btn btn-hover" type="button">
-                                            <i class="fa-solid fa-spinner fa-spin"></i>
-                                            Loading...
-                                        </button>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

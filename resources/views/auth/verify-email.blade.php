@@ -10,8 +10,7 @@
                     </div>
                     <div class="lr-text">
                         <h2>Verify email</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla interdum blandit felis a
-                            hendrerit.</p>
+                        <p>After registration, an email was sent to you with the opportunity to confirm your email. If the email has not been received, you can click on the button on the right.</p>
                     </div>
                 </div>
             </div>
@@ -22,7 +21,7 @@
                             @csrf
                             <button class="login-btn" type="submit">Resend Verification Link</button>
                         </form>
-                        <a href="{{ route('password.request') }}" class="forgot-link">Forgot Password?</a>
+{{--                        <a href="{{ route('password.request') }}" class="forgot-link">Forgot Password?</a>--}}
                         <div class="regstr-link">Don’t have an account? <a href="{{ route('register') }}">Register
                                 Now</a></div>
                     </div>
