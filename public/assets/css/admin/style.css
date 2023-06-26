@@ -1,0 +1,401 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+/* ==================================================================================
+Reset Css
+===================================================================================== */
+
+html, body, div, span, h3, h4, form, label {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    line-height: 1;
+    font-family: "Roboto" !important;
+    overflow-x: hidden;
+    font-weight: 400 !important;
+    background: #f1f1f1 !important;
+    margin: 0 auto;
+}
+
+button {
+    outline: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    outline: none;
+}
+
+button:focus {
+    outline: none !important;
+}
+
+input {
+    outline: none;
+}
+
+textarea {
+    outline: none;
+}
+
+/* ================ Typography Css =============== */
+
+h3 {
+    font-size: 1.375em;
+    /* 1.375x body copy size = 22px */
+    line-height: 1.13636364;
+    /* 25px / 22px */
+}
+
+h4 {
+    font-size: 1.125em;
+    /* 1.125x body copy size = 18px */
+    line-height: 1.11111111;
+}
+
+@media (min-width: 43.75em) {
+
+    h3 {
+        font-size: 1.5em;
+        /* 1.5x body copy size = 24px */
+        line-height: 1.25;
+    }
+
+    h4 {
+        line-height: 1.22222222;
+        /* (22px / 18px */
+    }
+}
+
+@media (min-width: 56.25em) {
+
+    h3 {
+        font-size: 1.75em;
+        /* 1.75x body copy size = 28px */
+        line-height: 1.25;
+    }
+}
+
+
+/* ================ CROSS BROWSER COMPATABILITY =============== */
+
+/* === Body Scrollbar === */
+
+body::-webkit-scrollbar {
+    width: 14px;
+    height: 18px;
+}
+
+body::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+body::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    height: 6px;
+    border: 4px solid transparent;
+    background-clip: padding-box;
+    -webkit-border-radius: 7px;
+    background-color: rgba(0, 0, 0, .15);
+    -webkit-box-shadow: inset -1px -1px 0 rgba(0, 0, 0, .05), inset 1px 1px 0 rgba(0, 0, 0, .05);
+}
+
+input[type="text"]:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #847577;
+}
+
+input[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
+    color: #847577;
+}
+
+/* === Input Email Placeholder Color === */
+
+input:focus {
+    border: 1px solid #ff7555;
+}
+
+textarea:focus {
+    border: 1px solid #ff7555;
+}
+
+.btn-hover:hover {
+    color: #fff !important;
+    background: rgb(75, 73, 172, 0.9) !important
+}
+
+/* === Left Side Homepage === */
+
+/* === Center Part Homepage === */
+
+.search-form-input {
+    border: 1px solid #e6e6e6;
+    min-height: 40px;
+    display: block;
+    margin-left: 0;
+    padding: 5px 20px;
+    font-size: 14px;
+    width: 100%;
+    color: #313131;
+    border-radius: 5px;
+}
+
+/* Event radio buttons */
+
+.z-bigger [type="radio"]:not(:checked) + label:after {
+    background: transparent;
+    visibility: hidden;
+}
+
+.z-bigger [type="checkbox"]:not(:checked),
+.z-bigger [type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.checkbox:not(:checked) + label {
+    position: relative;
+    width: 70px;
+    display: inline-block;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    margin: 17px 0;
+    margin-top: 100px;
+    height: 6px;
+    border-radius: 8px;
+    background: #ff7555;
+    z-index: 100 !important;
+}
+
+.checkbox:not(:checked) + label:before {
+    position: absolute;
+    font-family: 'unicons';
+    cursor: pointer;
+    top: -17px;
+    z-index: 2;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    -webkit-transition: all 300ms linear;
+    transition: all 300ms linear;
+}
+
+.checkbox:not(:checked) + label:before {
+    content: '\eac1';
+    left: 0;
+    color: var(--grey);
+    background-color: var(--dark-light);
+}
+
+.checkbox-tools:not(:checked) + label {
+    position: relative;
+    display: inline-block;
+    padding: 10px 15px;
+    width: auto;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 auto;
+    margin-left: 0;
+    margin-right: 7px;
+    margin-bottom: 5px;
+    text-align: center;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #f7f7f7;
+    color: #fff;
+}
+
+.checkbox-tools:not(:checked) + label {
+    color: #313131;
+    background-color: #f7f7f7;
+}
+
+.checkbox-tools:not(:checked) + label:hover {
+    color: #ff7555;
+    background-color: #f7f7f7;
+}
+
+.checkbox-tools:not(:checked) + label::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    background: #ff7555;
+    z-index: -1;
+    border: 0;
+}
+
+.checkbox-tools:not(:checked) + label .uil {
+    font-size: 24px;
+    line-height: 24px;
+    display: block;
+    padding-bottom: 10px;
+}
+
+.checkbox:checked ~ .section .container .row .col-12 .checkbox-tools:not(:checked) + label {
+    background-color: var(--light);
+    color: var(--dark-blue);
+}
+
+
+/* checkbox aspect nochecked */
+[type="checkbox"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.25em;
+    height: 1.25em;
+    border: 2px solid #ccc;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1);
+}
+
+/* checkbox aspect checked */
+
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after {
+    content: '\f00c';
+    position: absolute;
+    top: .13em;
+    left: 0.22em;
+    font-size: .84em;
+    line-height: 1.3;
+    color: #ff7555;
+    transition: all .2s;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(0);
+}
+
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before {
+    box-shadow: none;
+    border-color: #bbb;
+    background-color: #ddd;
+}
+
+/* hover style just for information */
+label:hover:before {
+    border: 2px solid #ff7555 !important;
+}
+
+.main-btn {
+    height: 40px;
+    padding: 0 20px;
+    display: inline-block;
+    border: 0;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 0 !important;
+    margin-top: 1.5rem;
+    display: block;
+    width: 100%;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #313131;
+    display: block;
+}
+
+.main-card {
+    border-radius: 5px;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 6px 22px 0 rgb(0 0 0 / 8%) !important;
+}
+
+.form-input {
+    border: 1px solid #e6e6e6;
+    min-height: 40px;
+    display: block;
+    margin-left: 0;
+    padding: 5px 20px;
+    font-size: 14px;
+    width: 100%;
+    color: #313131;
+    border-radius: 5px;
+}
+
+.form-textarea {
+    border: 1px solid #e6e6e6;
+    min-height: 40px;
+    display: block;
+    margin-left: 0;
+    padding: 10px 15px;
+    font-size: 14px;
+    width: 100%;
+    color: #313131;
+    border-radius: 5px;
+    height: 100px;
+}
+
+.form-textarea:focus {
+    color: #717171 !important;
+    background-color: #fff !important;
+    border-color: #4b49ac !important;
+    box-shadow: none !important;
+}
+
+.small-des {
+    font-size: 12px;
+    display: block;
+    color: #847577;
+    margin-top: 7px;
+    display: block;
+    width: 100%;
+}
+
+.main-btn {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    background: #4b49ac;
+    border: 1px solid #4b49ac;
+    border-radius: 5px;
+    display: block;
+    color: #fff;
+}
+
+.mt-37 {
+    margin-top: 37px !important;
+}
+
+
