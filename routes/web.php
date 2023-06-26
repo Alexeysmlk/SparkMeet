@@ -33,6 +33,9 @@ Route::get('/email/verify', [EmailVerificationPromtController::class, '__invoke'
 Route::get('/email/verify/{id}/{hash}', [VerifyEmailController::class, '__invoke'])->middleware(['auth', 'signed'])->name('verification.verify');
 Route::post('/email/verification-notification', [EmailVerificationNotificationController::class, '__invoke'])->middleware('auth')->name('verification.send');
 
+Route::get('/privacy', [\App\Http\Controllers\Client\DocumentController::class, 'privacy'])->name('privacy');
+Route::get('/terms-conditions', [\App\Http\Controllers\Client\DocumentController::class, 'termsConditions'])->name('terms-conditions');
+
 Route::name('user.')->middleware(['auth', 'verified'])->group(function () {
     Route::get('profile/create', [ProfileController::class, 'create'])->name('profile.create');
     Route::post('profile', [ProfileController::class, 'store'])->name('profile.store');
