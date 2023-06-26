@@ -77,7 +77,7 @@
                                                             @php
                                                                 $start = strtotime('00:00');
                                                                 $end = strtotime('23:59');
-                                                                $interval = 10 * 60;
+                                                                $interval = 20 * 60;
                                                             @endphp
 
                                                             @for ($time = $start; $time <= $end; $time += $interval)

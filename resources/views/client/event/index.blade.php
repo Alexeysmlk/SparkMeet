@@ -119,7 +119,7 @@
                                         @foreach($categories as $category)
                                             <span class="category-item">
                                                 @if($category->icon_path)
-                                                    <img src="{{ asset("storage/images/$category->icon_path") }}" alt="Icon">
+                                                    <img src="{{ asset("storage/$category->icon_path") }}" alt="Icon">
                                                 @endif
                                                 {{ $category->name }}
                                             </span>
@@ -150,7 +150,7 @@
                                         </ul>
                                     </div>
                                     <div class="weather-right">
-                                        <i class="{{ $weatherIcons[$weather['current']['condition']['code']] }}"></i>
+                                        <i class="{{$weatherIcons[$weather['current']['condition']['code']]}}"></i>
                                         <span>{{ $weather['current']['temp_c'] }}°</span>
                                     </div>
                                 </div>
