@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DashBoardController;
+use App\Http\Controllers\Admin\EventController as AdminEventController;
+use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\Auth\EmailVerificationPromtController;
 use App\Http\Controllers\Auth\VerifyEmailController;
@@ -43,6 +48,16 @@ Route::name('user.')->middleware(['auth', 'verified'])->group(function () {
         Route::delete('/user/delete-account', [UserController::class, 'deactivateAccount'])->name('user.deleteAccount');
         Route::post('/events/{event}/like', [EventController::class, 'like'])->name('events.like');
     });
+});
+
+Route::name('admin.')->middleware(['role:admin', 'verified'])->prefix('admin')->group(function (){
+    Route::get('dashboard', [DashBoardController::class, 'index'])->name('dashboard.main');
+    Route::resource('events', AdminEventController::class);
+    Route::resource('categories', CategoryController::class);
+    Route::resource('tags', TagController::class)->except('show');
+    Route::get('users', [AdminUserController::class, 'index'])->name('user.index');
+    Route::get('users/{user}', [AdminUserController::class, 'show'])->name('user.show');
+    Route::post('/users/{user}/change-role', [AdminUserController::class, 'changeRole'])->name('user.change-role');
 });
 
 Auth::routes();
