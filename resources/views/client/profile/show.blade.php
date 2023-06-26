@@ -70,14 +70,6 @@
                                         </div>
                                     </div>
                                 @endforeach
-                                <div class="col-md-12">
-                                    <div class="loading-btn">
-                                        <button class="process-btn btn-hover" type="button">
-                                            <i class="fa-solid fa-spinner fa-spin"></i>
-                                            Loading...
-                                        </button>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

@@ -11,8 +11,6 @@
                     </div>
                     <div class="lr-text">
                         <h2>Login Now</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla interdum blandit felis a
-                            hendrerit.</p>
                     </div>
                 </div>
             </div>
@@ -42,7 +40,7 @@
                             </div>
                             <button class="login-btn" type="submit">Login Now</button>
                         </form>
-                        <a href="{{ route('password.request') }}" class="forgot-link">Forgot Password?</a>
+{{--                        <a href="{{ route('password.request') }}" class="forgot-link">Forgot Password?</a>--}}
                         <div class="regstr-link">Don’t have an account? <a href="{{ route('register') }}">Register
                                 Now</a></div>
                     </div>

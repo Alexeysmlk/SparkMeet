@@ -7,7 +7,7 @@
                 <div class="col-lg-12">
                     <ol class="title-bar-text">
                         <li class="breadcrumb-item"><a href="{{route('user.events.index')}}">Main</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Creating an event</li>
+                        <li class="breadcrumb-item active" aria-current="page">Event Editing</li>
                     </ol>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                                     <div class="panel">
                                         <div class="button_outer">
                                             <div class="btn_upload">
-                                                <input type="file" id="upload_file" name="photo">
+                                                <input type="file" id="upload_file" name="photo" accept="image/jpeg,png,jpg">
                                                 Upload Image
                                             </div>
                                             <div class="processing_bar"></div>

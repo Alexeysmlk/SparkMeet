@@ -50,21 +50,17 @@
             <div class="col-lg-6 col-md-12">
                 <div class="footer-left">
                     <ul>
-                        <li><a href="{{asset('/assets/privacy_policy.html')}}">Privacy</a></li>
-                        <li><a href="{{asset('/assets/term_conditions.html')}}">Term and Conditions</a></li>
-                        <li><a href="{{asset('/assets/about.html')}}">About</a></li>
-                        <li><a href="{{asset('/assets/contact_us.html')}}">Contact Us</a></li>
+                        <li><a href="{{route('privacy')}}">Privacy</a></li>
+                        <li><a href="{{route('terms-conditions')}}">Term and Conditions</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12">
                 <div class="footer-right">
                     <ul class="copyright-text">
-                        <li><a href="{{asset('/assets/index.html')}}"><img src="{{asset('/assets/images/logo-2.svg')}}" alt=""></a></li>
+                        <li><a href="index.html"><img src="{{asset('/assets/images/logo-2.svg')}}" alt=""></a></li>
                         <li>
-                            <div class="ftr-1"><i class="far fa-copyright"></i> 2022 Goeveni by <a
-                                    href="{{asset('/assets/https://themeforest.net/user/gambolthemes')}}">Gambolthemes</a>. All
-                                Rights Reserved.
+                            <div class="ftr-1"><i class="far fa-copyright"></i> 2023 Samoilik Aleksey
                             </div>
                         </li>
                     </ul>

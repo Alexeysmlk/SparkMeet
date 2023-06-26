@@ -6,7 +6,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <ol class="title-bar-text">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Main') }}</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form></li>
                         <li class="breadcrumb-item active" aria-current="page">Creating an account</li>
                     </ol>
                 </div>
