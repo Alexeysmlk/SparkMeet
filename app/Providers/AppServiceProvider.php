@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        View::composer('layouts.main', function ($view) {
+        View::composer(['layouts.main', 'admin.main'], function ($view) {
             $profile = Auth::user()->profile;
             $view->with('profile', $profile);
         });

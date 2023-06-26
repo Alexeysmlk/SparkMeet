@@ -29,8 +29,8 @@ class StoreEventRequest extends FormRequest
             'description' => 'nullable|string',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
             'city' => ['required', 'exists:cities,id'],
-            'tags' => ['required', 'array', 'max:3'],
-            'tags.*' => ['required', 'exists:tags,id'],
+            'tags' => ['array', 'max:3'],
+            'tags.*' => ['exists:tags,id'],
         ];
     }
 }

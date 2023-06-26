@@ -1,24 +1,21 @@
-@extends('layouts.main')
+@extends('admin.main')
 
 @section('content')
-    <div class="title-bar">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <ol class="title-bar-text">
-                        <li class="breadcrumb-item"><a href="{{route('user.events.index')}}">Main</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Creating an event</li>
-                    </ol>
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-12 grid-margin mb-3">
+                <div class="row">
+                    <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                        <h3 class="font-weight-bold">Creating a new event</h3>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <main class="goeveni-mp">
-        <div class="main-section">
-            <div class="container">
-                <div class="row justify-content-md-center">
-                    <div class="col-xl-6 col-lg-10 col-md-12">
-                        <form action="{{route('user.events.store')}}"
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="{{route('admin.events.store')}}"
                               method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="main-card p-4">
@@ -142,6 +139,7 @@
                                                         <option value="{{ $tag->id }}">{{ $tag->name }}</option>
                                                     @endforeach
                                                 </select>
+
                                                 @foreach($errors->get('tags') as $error)
                                                     <span style="color: red">{{$error}}</span><br>
                                                 @endforeach
@@ -157,5 +155,6 @@
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+
 @endsection

@@ -16,7 +16,7 @@ class WeatherService
 
     public function getCurrentWeather($city)
     {
-        return Cache::remember("weather.{$city}", 3600, function () use ($city) {
+        return Cache::remember("weather.{$city}", 1800, function () use ($city) {
             $response = Http::get("http://api.weatherapi.com/v1/current.json?key={$this->key}&q={$city}");
 
             return $response->json();
